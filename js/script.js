@@ -1,4 +1,9 @@
-        function showPage(pageId) {
+        const whatsappFloat = document.getElementById('whatsappFloat');
+        const chatDialog = document.getElementById('chatDialog');
+        const closeBtn = document.getElementById('closeBtn');
+        const openChatBtn = document.getElementById('openChatBtn');
+        const overlay = document.getElementById('overlay');
+       function showPage(pageId) {
             // Hide all pages
             const pages = document.querySelectorAll('.page-section');
             pages.forEach(page => page.classList.remove('active'));
@@ -224,3 +229,94 @@
             `;
             document.head.appendChild(style);
         });
+
+        // for navbar collapse
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link[onclick*="showPage"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Small delay to ensure the page change happens first
+                    setTimeout(() => {
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        const navbarToggler = document.querySelector('.navbar-toggler');
+                        
+                        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                            if (window.bootstrap && bootstrap.Collapse) {
+                                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                                    toggle: false
+                                });
+                                bsCollapse.hide();
+                            } else {
+                                navbarCollapse.classList.remove('show');
+                                if (navbarToggler) {
+                                    navbarToggler.classList.add('collapsed');
+                                    navbarToggler.setAttribute('aria-expanded', 'false');
+                                }
+                            }
+                        }
+                    }, 50);
+                });
+            });
+        });
+        // Whatsapp
+
+        const whatsappNumber = '447377113663'; 
+        
+        const message = 'Hello, I would like to know more about your care services.';
+
+        // Toggle chat dialog
+        function toggleChat() {
+            const isActive = chatDialog.classList.contains('active');
+            
+            if (isActive) {
+                closeChat();
+            } else {
+                openChat();
+            }
+        }
+
+        function openChat() {
+            chatDialog.classList.add('active');
+            overlay.classList.add('active');
+            whatsappFloat.classList.remove('pulse');
+        }
+
+        function closeChat() {
+            chatDialog.classList.remove('active');
+            overlay.classList.remove('active');
+            // Resume pulse animation after closing
+            setTimeout(() => {
+                whatsappFloat.classList.add('pulse');
+            }, 3000);
+        }
+
+        function openWhatsApp() {
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+            closeChat();
+        }
+
+        // Event listeners
+        whatsappFloat.addEventListener('click', toggleChat);
+        closeBtn.addEventListener('click', closeChat);
+        openChatBtn.addEventListener('click', openWhatsApp);
+        overlay.addEventListener('click', closeChat);
+
+        // Close dialog when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeChat();
+            }
+        });
+
+        // Auto-pulse animation
+        setInterval(() => {
+            if (!chatDialog.classList.contains('active')) {
+                whatsappFloat.classList.add('pulse');
+                setTimeout(() => {
+                    whatsappFloat.classList.remove('pulse');
+                }, 2000);
+            }
+        }, 10000);
