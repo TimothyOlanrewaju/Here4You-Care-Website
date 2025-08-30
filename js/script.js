@@ -3,6 +3,8 @@
         const closeBtn = document.getElementById('closeBtn');
         const openChatBtn = document.getElementById('openChatBtn');
         const overlay = document.getElementById('overlay');
+
+        document.getElementById('year').textContent = new Date().getFullYear();
        function showPage(pageId) {
             // Hide all pages
             const pages = document.querySelectorAll('.page-section');
