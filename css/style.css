@@ -13,7 +13,7 @@ body {
 
 .navbar-brand {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--primary-color) !important;
 }
 
@@ -645,3 +645,29 @@ body {
                 height: 28px;
             }
         }
+
+        /* Footer responsive styles */
+@media (max-width: 768px) {
+  .footer .row > div {
+    text-align: center;
+  }
+
+  .footer .social-icons {
+    justify-content: center;
+  }
+  
+  .footer .social-icons a {
+    margin: 0 10px;
+  }
+
+  .footer ul {
+    padding-left: 0;
+  }
+
+  .footer ul li {
+    display: block;
+  }
+  .badge{
+    margin-bottom: 3px;
+  }
+}

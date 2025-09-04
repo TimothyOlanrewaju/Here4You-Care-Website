@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="css/all.min.css">
 </head>
 <body>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#" onclick="showPage('home')">
                 <img src="img/Here4YouCare.jpg" alt="Here4YouCare Logo" style="height: 45px;width: 45px;border-radius: 100%;">
-                <span>Here4You Care</span>
+                <span>Here4You Care Ltd</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -41,7 +43,7 @@
         </div>
     </nav>
 
-        <!-- Home Page -->
+    <!-- Home Page -->
     <div id="home" class="page-section active">
         <!-- Hero Section -->
         <section class="hero-section">
@@ -66,28 +68,22 @@
         <section class="stats-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="stat-item">
-                            <div class="stat-number" data-target="500" data-suffix="+">0</div>
+                            <div class="stat-number" data-target="100" data-suffix="+">0</div>
                             <p>Happy Clients</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="stat-item">
-                            <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                            <div class="stat-number" data-target="25" data-suffix="+">0</div>
                             <p>Certified Caregivers</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="stat-item">
                             <div class="stat-number" data-target="24" data-suffix="/7">0</div>
                             <p>Available Support</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="5" data-suffix="+">0</div>
-                            <p>Years Experience</p>
                         </div>
                     </div>
                 </div>
@@ -95,6 +91,7 @@
         </section>
     </div>
 
+    <!-- About Page -->
     <div id="about" class="page-section">
         <section class="section-padding" style="margin-top: 40px;">
             <div class="container">
@@ -348,7 +345,7 @@
                     <div class="col-lg-10">
                         <div class="contact-form">
                             <div id="form-messages"></div>
-                            <form id="signup-form" action="https://formspree.io/f/xvgbkkyr" method="POST">
+                            <form id="signup-form" action="" method="POST">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="name" class="form-label">Full Name *</label>
@@ -426,29 +423,37 @@
                         <h4 class="mb-4">Get in Touch</h4>
                         <p>We are here to answer your questions and provide support. Reach out via the following methods</p>
                         <div class="contact-info">
-                            <div class="d-flex align-items-center mb-3">
+                            <div class="d-flex align-items-center mb-1">
                                 <i class="fas fa-map-marker-alt me-3" style="color: var(--primary-color); font-size: 1.2rem;"></i>
                                 <div>
-                                    <strong>Address:</strong><br>
+                                    <strong>Address 1:</strong><br>
                                     128 City Road, London, <br>
                                     United Kingdom, EC1V 2NX
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center mb-3">
+                            <div class="d-flex align-items-center mb-1">
+                                <i class="fas fa-map-marker-alt me-3" style="color: var(--primary-color); font-size: 1.2rem;"></i>
+                                <div>
+                                    <strong>Address 2:</strong><br>
+                                    21 Strain Cresent, Airdrie, <br>
+                                    ML6 9ND
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-1">
                                 <i class="fas fa-phone me-3" style="color: var(--primary-color); font-size: 1.2rem;"></i>
                                 <div>
                                     <strong>Phone:</strong><br>
                                     +44 7377 113663
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center mb-3">
+                            <div class="d-flex align-items-center mb-1">
                                 <i class="fas fa-envelope me-3" style="color: var(--primary-color); font-size: 1.2rem;"></i>
                                 <div>
                                     <strong>Email:</strong><br>
                                     info@here4youcare.co.uk
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center mb-3">
+                            <div class="d-flex align-items-center mb-1">
                                 <i class="fas fa-clock me-3" style="color: var(--primary-color); font-size: 1.2rem;"></i>
                                 <div>
                                     <strong>Hours:</strong><br>
@@ -462,7 +467,7 @@
                         <div class="contact-form">
                             <h4 class="mb-4">Send us a Message</h4>
                             <div id="contact-form-messages"></div>
-                            <form id="contact-form" action="https://formspree.io/f/xvgbkkyr" method="POST">
+                            <form id="contact-form" action="" method="POST">
                                 <div class="mb-3">
                                     <label for="contact-name" class="form-label">Full Name *</label>
                                     <input type="text" class="form-control" id="contact-name" name="contact-name" required>
@@ -535,14 +540,15 @@
                 <!-- Social Media -->
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="mb-4">
-                        <img src="img/CQC.png" alt="CQC badge" style="width: 200px;height: 100px;">
+                        <img src="img/CQC.png" alt="CQC badge" style="width: 200px;height: 100px;margin-bottom: 3px;">
+                        <img src="img/careinspectorate.jpg" alt="CareInspectorate badge" style="width: 200px;height: 100px;">
                     </div>
-                    <div class="social-icons">
+                    <!-- <div class="social-icons">
                         <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    </div> -->
                 </div>
                 
                 <!-- Contact Info -->
@@ -551,7 +557,8 @@
                     <ul class="list-unstyled">
                         <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>128 City Road, London, United Kingdom, EC1V 2NX </li>
                         <li class="mb-2"><i class="fas fa-phone me-2"></i>+44 7377 113663</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>info@here4youcare.co.uk</li>
+                        <li class="mb-2"><a href="mailto:info@here4youcare.co.uk"><i class="fas fa-envelope me-2"></i>info@here4youcare.co.uk</a></li>
+
                         <li><i class="fas fa-clock me-2"></i>24/7 Support</li>
                     </ul>
                 </div>
